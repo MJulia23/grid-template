@@ -80,7 +80,7 @@
         font-size: 1.25rem;
     }
     &:hover .skill-item__overlay {
-        opacity: 0.95 !important;
+        opacity: 0.95 !important; //не срабатывал,приоритет!
     }
     &:hover .skill-item__image {
         transform: scale(1.1);
