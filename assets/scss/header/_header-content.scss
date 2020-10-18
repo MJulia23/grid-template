@@ -4,7 +4,7 @@
         text-align: center;
         text-transform: uppercase;
         @include lg-min {
-            margin: 0 0 53px;
+            margin: 0 0 53px; //
         }
         @include lg-md {
             margin: 0 0 43px;
