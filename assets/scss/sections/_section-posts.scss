@@ -1,0 +1,131 @@
+    .posts {
+        padding: 100px 0;
+        @include lg-md {
+            padding-top: 80px;
+        }
+        @include md-sm {
+            padding-top: 60px;
+        }
+        @include sm {
+            padding: 60px 0;
+        }
+        &__button {
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+            padding-top: $gap;
+        }
+    }
+    
+    .posts__container {
+        @extend %container;
+        h2 {
+            @include lg-md {
+                font-size: 2rem;
+                margin-bottom: 42px;
+            }
+            @include md-sm {
+                font-size: 1.5rem;
+                margin-bottom: 36px;
+            }
+        }
+    }
+    
+    .posts__box {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+        @include lg-md {
+            grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include md-sm {
+            grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+            grid-template-columns: 1fr 1fr;
+        }
+        @include sm {
+            grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    .post-item {
+        height: 100%;
+        background-color: #f2f2f2;
+        transition: background-color 0.5s;
+        &:nth-of-type(1) {
+            grid-area: p1;
+            grid-row-start: p1;
+            grid-column-start: p1;
+            grid-row-end: p1;
+            grid-column-end: p1;
+        }
+        &:nth-of-type(2) {
+            grid-area: p2;
+        }
+        &:nth-of-type(3) {
+            grid-area: p3;
+        }
+        &:nth-of-type(4) {
+            grid-area: p4;
+        }
+        &:nth-of-type(5) {
+            grid-area: p5;
+        }
+        &:nth-of-type(6) {
+            grid-area: p6;
+        }
+        &__link {
+            display: grid;
+            height: 100%;
+            grid-template-rows: 300px 1fr;
+            overflow: hidden;
+        }
+        &__content {
+            display: grid;
+            padding: 20px;
+            text-align: center;
+            align-content: center; // выровнила концент по центру display - grid
+            h3 {
+                margin: 18px 0;
+                transition: color 0.5s;
+                letter-spacing: 0.055rem;
+                font-family: "Roboto Slab", serif;
+            }
+            p {
+                margin: 16px 0;
+                transition: color 0.5s;
+                letter-spacing: 0.0018rem;
+                @include sm {
+                    letter-spacing: 0.0005rem;
+                }
+            }
+        }
+        &__image {
+            height: 300px;
+            display: flex;
+            overflow: hidden;
+            align-content: center;
+            justify-content: center;
+            object-fit: cover;
+            background-color: $color-primary;
+            img {
+                width: 100%;
+                object-fit: cover;
+                transition: transform 0.5s;
+            }
+        }
+        &:hover {
+            background-color: #d8d8d8;
+            .post-item__image img {
+                transform: scale(1.1);
+            }
+        }
+        &:hover h3 {
+            color: $color-primary;
+        }
+        &:hover p {
+            color: $color-primary;
+        }
+    }

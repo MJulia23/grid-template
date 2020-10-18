@@ -1,0 +1,87 @@
+.about {
+    letter-spacing: 0.055em;
+    background-color: #e5e5e5;
+    padding: 100px 0;
+    &__container {
+        @extend %container;
+        display: grid;
+        grid-template-columns: 1fr 271px;
+        grid-gap: 100px;
+        @include lg-min {
+            grid-gap: 100px;
+            grid-template-columns: 1fr 271px;
+        }
+        @include lg-md {
+            grid-gap: 40px;
+            grid-template-columns: 1fr 271px;
+        }
+        @include md-sm {
+            grid-gap: 20px;
+            grid-template-columns: 1fr 236px;
+        }
+        @include sm {
+            grid-gap: 20px;
+            grid-template-columns: 1fr;
+        }
+    }
+    &__content {
+        display: block;
+        max-width: 930px;
+        p {
+            font-size: 1rem;
+            letter-spacing: 0.049em;
+            margin: 18px 0;
+            @include lg-min {
+                font-size: 1.125rem;
+            }
+            @include lg-md {
+                letter-spacing: 0.056em;
+                margin: 16px 0;
+            }
+            @include sm {
+                font-size: 1rem;
+                letter-spacing: 0.055em;
+                margin: 16px 0;
+            }
+            &:last-of-type {
+                margin: 0;
+            }
+            &:first-of-type {
+                position: relative;
+                margin-top: -5px;
+                &::after {
+                    position: absolute;
+                    top: 0;
+                    width: 2px;
+                    height: 200px;
+                    content: "";
+                    background-color: rgba(99, 117, 136, 0.1);
+                    right: -50px;
+                    top: 0;
+                    @include lg-md {
+                        right: -20px;
+                    }
+                    @include md-sm {
+                        right: -10px;
+                    }
+                }
+            }
+        }
+    }
+    &__image {
+        display: grid;
+        position: relative;
+        align-content: center;
+        justify-items: center;
+        img {
+            max-width: 100%;
+            max-height: 480px;
+        }
+    }
+    @include lg-md {
+        padding: 80px 0;
+    }
+    @include sm {
+        padding: 60px 0;
+    }
+}
