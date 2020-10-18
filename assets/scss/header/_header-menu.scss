@@ -10,7 +10,7 @@
         position: relative;
         display: grid;
         align-items: center;
-        @extend %container;
+        @extend %container; // _extends.sccs
         grid-template-columns: auto 1fr;
     }
 }
