@@ -1,5 +1,6 @@
 .header-content {
     position: relative;
+    transition: margin-top 0.5s;
     &__title {
         text-align: center;
         text-transform: uppercase;
